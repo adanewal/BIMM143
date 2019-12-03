@@ -1,0 +1,63 @@
+---
+title: "class12: Structural Bioinformatics II"
+author: "Arpit Danewalia"
+date: "11/7/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Prep for docking 
+We want to produce a protein-only PDB gile adn a drug only PDB file 
+```{r}
+library(bio3d)
+
+#download the PDB file
+file.name <- get.pdb("1hsg")
+```
+
+```{r}
+pdb <- read.pdb("1hsg.pdb")
+protein <- atom.select(pdb, "protein", value=TRUE)
+write.pdb(protein, file="1hsg_protein.pdb")
+```
+and for ligand
+```{r}
+ligand <- atom.select(pdb, "ligand", value=TRUE)
+ligand
+write.pdb(ligand, file="1hsg_ligand.pdb")
+```
+
+##Process our docking results 
+```{r}
+library(bio3d)
+res <- read.pdb("all.pdbqt", multi=TRUE)
+write.pdb(res, "results.pdb")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
