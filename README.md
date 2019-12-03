@@ -2,7 +2,7 @@
 This is a store of my classwork for [BIMM143 Fall 2019] at UC San Diego
 
 ## Content 
-- Class 05: 
+- Class 05: "https://github.com/adanewal/BIMM143/tree/master/class05"
 - Class 06
 - Class 07
 - Class 08
